@@ -4,7 +4,7 @@ import styles from "../../stylelogin/stylefollow";
 import data from "./dataunfollow";
 import dataList from './datafollow';
 
-const Component = ({key,name, image, isFollow}) => {
+const Component = ({id,name, image, isFollow,fromList}) => {
     const [textFollowed, setTextFollowed] = useState('');
     const [IsFollowStatus, setIsFollowStatus] = useState(isFollow);
     useEffect(() => {
@@ -22,11 +22,14 @@ const Component = ({key,name, image, isFollow}) => {
         if(IsFollowStatus === true){
             setTextFollowed('Bỏ theo dõi');
             setIsFollowStatus(false);
-            dataList.push({id: key, name: name, image: image, isFollow: isFollow});
+            dataList.push({id: id, name: name, image: image, isFollow: isFollow});
         }
         else {
-            let dataDelete = dataList.indexOf(key); // find index of this item in dataList
-            dataList.splice(dataDelete, 1);
+            for( let i = 0; i < dataList.length; i++){ 
+                if ( dataList[i].id == id) { 
+                    dataList.splice(i, 1); 
+                }
+            }
             setTextFollowed('Theo dõi');
             setIsFollowStatus(true);
         }
@@ -34,10 +37,16 @@ const Component = ({key,name, image, isFollow}) => {
     return (
         <View style={styles.viewA}>
             <Image source={{ uri: image}} style={styles.Image} />
-            <Text style={{  marginTop: 27, fontSize: 14, }}>{name}</Text>         
-            <TouchableOpacity style={IsFollowStatus ? styles.touchA : styles.touchA1} onPress={changeStatus}>
-                    <Text style={styles.Text}>{textFollowed}</Text>
-            </TouchableOpacity>
+            <Text style={{ marginLeft: 11, marginTop: 27, fontSize: 14, flex:0.99 }}>{name}</Text>
+            {fromList ? (
+                <TouchableOpacity style={IsFollowStatus ? styles.touchA : styles.touchA1} onPress={changeStatus}>
+                 <Text style={styles.Text}>{textFollowed}</Text>
+                </TouchableOpacity>
+            )  : (
+                <View/>
+            )
+            }
+            
         </View>
     )
 }

@@ -8,10 +8,10 @@ import data from './dataunfollow';
 const SecondRoute = () => {
     return (
       <SafeAreaView>
-        <View style={{ marginTop: 15, }}>
+        <View style={{}}>
           {
             data.map(item => (
-              <Component key={item.id} name={item.name} image={item.image} isFollow={item.isFollow} fromList={true}/>
+              <Component id={item.id} name={item.name} image={item.image} isFollow={item.isFollow} fromList={true}/>
             ))
           }
         </View>

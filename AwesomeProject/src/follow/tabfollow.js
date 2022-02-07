@@ -8,10 +8,10 @@ import { SafeAreaView, StyleSheet, TextInput, Text, ImageBackground, Image, Touc
 const FirstRoute = () => {
     return (
     <SafeAreaView>
-        <View style={{ marginTop: 15, }}>
+        <View style={{  }}>
         {
             dataList.map(item => (
-            <Component key={item.id} name={item.name} image={item.image} isFollow={item.isFollow} fromList={false}/>
+            <Component id={item.id} name={item.name} image={item.image} isFollow={item.isFollow} fromList={false}/>
             ))
         }
         </View>
