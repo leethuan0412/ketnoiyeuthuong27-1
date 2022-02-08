@@ -8,6 +8,7 @@ import styles from '../../stylelogin/styleLogin';
 import Eye from '../../contanst/eye.svg';
 import Eyehint from '../../contanst/eyehint.svg';
 import Facebook from '../../contanst/facebook.svg';
+import Logo from '../../contanst/logo.svg';
 const login = () => {
   const navigation = useNavigation();
   const [text, onChangeText] = React.useState(null);
@@ -17,7 +18,7 @@ const login = () => {
   
   return (
     <SafeAreaView>
-      <Image source={image} resizeMode="center" style={styles.image} />
+      <Logo  resizeMode="center" style={styles.image} />
 
       <TextInput
         style={styles.input}
@@ -50,7 +51,7 @@ const login = () => {
       <TouchableOpacity style={{justifyContent:'flex-end'}} onPress={()=>{navigation.navigate('password')}}>
         <Text style={styles.baseText}>Quên mật khẩu</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.login} >
+      <TouchableOpacity style={styles.login} onPress={()=>{navigation.navigate('display')}}>
         <Text style={{color:'white'}}>Đăng nhập</Text>
       </TouchableOpacity>
       <View style={{ flexDirection: 'row', marginLeft: 10, marginTop: 18 }}>
@@ -79,107 +80,4 @@ const login = () => {
 
   );
 };
-// const styles = StyleSheet.create({
-//   container: {
-//     paddingTop: 50,
-//   },
-//   imageyes: {
-//     flexDirection: 'row',
-//     width: 24,
-//     height: 24,
-//     position: 'absolute',
-//     top: 20,
-//     right: 20,
-//   },
-//   Text1: {
-//     fontSize: 15,
-//     marginTop: 10,
-//     alignSelf: 'center',
-//     //fontWeight:'bold',
-//   },
-//   google1: {
-//     borderRadius: 16,
-//     height: 36,
-//     width: 36,
-//     //  alignSelf:'center',
-
-//   },
-//   facebook1: {
-//     borderRadius: 16,
-//     height: 36,
-//     width: 36,
-//     //  alignSelf:'center',
-//     marginLeft: 15,
-//   },
-//   input: {
-//     height: 50,
-//     margin: 10,
-//     borderWidth: 1,
-//     borderRadius: 10,
-//     width: 384,
-//     borderColor: "#C4C4C4",
-//     marginLeft:16,
-//     marginRight:16,
-//   },
-  
-//   password:{
-//     fontWeight:'bold',
-//     alignSelf:'center',
-//     fontSize: 14,
-//     color:'black',
-//   },
-//   dangki: {
-//     color: '#60B939',
-//     fontSize: 14,
-//     //fontWeight: 'bold',
-//   },
-//   Text: {
-//     fontSize: 14,
-//     marginTop: 50,
-//     alignSelf: 'center',
-//     //fontWeight: 'bold',
-//   },
-//   image: {
-//     height: 49,
-//     width: 166,
-//     alignSelf: 'center',
-//     //marginLeft:97,
-//     //marginRight:97,
-
-//     marginTop: 30,
-//   },
-//   google: {
-//     borderRadius: 16,
-//     height: 36,
-//     width: 36,
-//     //  alignSelf:'center',
-//     // marginLeft:10,
-//     bottom: '16.41%',
-//   },
-//   facebook: {
-//     borderRadius: 16,
-//     height: 36,
-//     width: 36,
-//     marginLeft: 15,
-//     //  alignSelf:'center',
-//     bottom: '16.41%',
-//   },
-//   login: {
-//     backgroundColor: '#60B939',
-//     color: 'white',
-//     padding: 16,
-//     borderRadius: 10,
-//     paddingHorizontal: 128,
-//     alignSelf: 'center',
-//     marginTop: 15,
-//     fontSize: 14,
-//     //width:328,
-//   },
-//   baseText: {
-//     //fontWeight: 'bold',
-//     alignSelf: 'flex-end',
-//     marginRight: 10,
-//     fontSize: 14,
-//   },
-// });
 export default login;

@@ -2,6 +2,7 @@ import React from "react";
 import { SafeAreaView, StyleSheet, TextInput, Text, ImageBackground, Image, TouchableOpacity, View } from "react-native";
 import styles from '../../stylelogin/styleLogin';
 import Facebook from '../../contanst/facebook.svg';
+import Logo from '../../contanst/logo.svg';
 const sigin = (props) => {
   const { navigation } = props;
   const [text1, onChangeText1] = React.useState(null);
@@ -11,7 +12,8 @@ const sigin = (props) => {
   const [isSecureText, setSecureText] = React.useState(true);
   return (
     <SafeAreaView>
-      <Image source={image} resizeMode="center" style={styles.image} />
+     <Logo  resizeMode="center" style={styles.image} />
+
       <TextInput
         style={styles.input}
         onChangeText={onChangeText1}
@@ -41,7 +43,7 @@ const sigin = (props) => {
       </TouchableOpacity>
       <View style={{ flexDirection: 'row', marginLeft: 10, marginTop: 19 }}>
         <Text style={{ fontSize: 14, marginLeft: 31, }}>Bạn đã có tài khoản?</Text>
-        <TouchableOpacity  onPress={() => { navigation.goBack() }}>
+        <TouchableOpacity  onPress={() => { navigation.navigate('login') }}>
           <Text style={styles.dangki}>Đăng nhập</Text>
         </TouchableOpacity>
 

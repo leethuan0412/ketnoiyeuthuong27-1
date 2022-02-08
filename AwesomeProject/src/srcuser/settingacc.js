@@ -7,9 +7,6 @@ import styles from '../../stylelogin/styleacc';
 import Bigger from '../../contanst/bigger.svg';
 import People from '../../contanst/people.svg';
 import Bell from '../../contanst/bell.svg';
-// const image1 = { uri: "https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png" };
-// const image2 = {uri: "https://png.pngtree.com/png-vector/20191110/ourlarge/pngtree-bell-alarm-line-icon-vector-png-image_1978368.jpg",};
-// const image3 = { uri: "https://e7.pngegg.com/pngimages/1009/847/png-clipart-greater-than-icons-logos-emojis-mathematical-signs-thumbnail.png" };
 
 const settingacc = (props) => {
     // const navigation = useNavigation();
@@ -31,7 +28,7 @@ const settingacc = (props) => {
                 </TouchableOpacity>
             </View>
             <View style={styles.setting}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>{navigation.navigate('login')}}>
                     <Text style={{ fontSize: 14, color: '#FF0000',marginTop:21  }}>Đăng xuất</Text>
                 </TouchableOpacity>
             </View>

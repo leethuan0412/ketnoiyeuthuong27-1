@@ -10,22 +10,111 @@ import otpinput from'../srcuser/otpinput';
 import notifications from '../srcuser/notifications';
 import email from '../srcuser/email';
 import sendemail from'../srcuser/sendemail';
+import vote from '../follow/vote';
+import login from '../srcloginn/login';
+import sigin from '../srcloginn/sigin';
+import Home from '../../contanst/home.svg';
+import Message from '../../contanst/message.svg';
+import Popular from '../../contanst/heart.svg';
+import User from '../../contanst/user.svg';
+import List from '../../contanst/list.svg';
+import password from '../srcloginn/password';
+import forgetpassword from '../srcloginn/forgetpassword';
+import forget from '../srcloginn/forget';
+const Stack = createStackNavigator();
+function Mystack2(){
+    return(
+        <Stack.Navigator screenOptions={{  }} >
+        <Stack.Screen name="login" component={login} />
+        <Stack.Screen name="sigin" component={sigin} />
+        <Stack.Screen name="password" component={password} />
+        <Stack.Screen name="forgetpassword" component={forgetpassword} />
+        <Stack.Screen name="forget" component={forget} />
+    </Stack.Navigator>
+    );
+}
+function Mystack() {
+    return(
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="display" component={display} />
+        <Stack.Screen name="information" component={information} />
+        <Stack.Screen name="phone" component={phone} />
+        <Stack.Screen name="otpinput" component={otpinput} />
+        <Stack.Screen name="settingacc" component={settingacc} />
+        <Stack.Screen name="notifications" component={notifications} />
+        <Stack.Screen name="email" component={email} />
+        <Stack.Screen name="sendemail" component={sendemail} />
+        <Stack.Screen name="vote" component={vote} />
+        <Stack.Screen name="Mystack2" component={Mystack2} />
+
+    </Stack.Navigator>
+    );
+}
+const Tab = createBottomTabNavigator();
+function MyTab() {
+    return(
+        <Tab.Navigator
+        screenOptions={{headerShown: false, tabBarActiveTintColor: 'green'}}>
+        <Tab.Screen
+          name="Mystack"
+          component={Mystack}
+          options={{
+            //tabBarStyle: { display: "none" },
+            tabBarLabel: 'Trang chủ',
+            tabBarIcon: () => <Home size={20} />,
+            //     tabBarIcon: () => (
+            //         <MaterialCommunityIcons name="account" color={'red'} size={20} />
+            //       ),
+          }}
+        />
+        <Tab.Screen
+          name="login"
+          component={login}
+          options={{
+            //tabBarStyle: { display: "none" },
+            tabBarLabel: 'Tin nhắn',
+            tabBarIcon: () => <Message size={20} />,
+          }}
+        />
+
+        <Tab.Screen
+          name="sigin"
+          component={sigin}
+          options={{
+            //tabBarStyle: {display: 'none'},
+            tabBarLabel: 'Cộng đồng',
+            tabBarIcon: () => <Popular size={20} />,
+          }}
+        />
+        <Tab.Screen
+          name="Quản lí"
+          component={phone}
+          options={{
+            //tabBarStyle: {display: 'none'},
+            tabBarLabel: 'Cộng đồng',
+            tabBarIcon: () => <List size={20} />,
+          }}
+        />
+        <Tab.Screen
+          name="email"
+          component={email}
+          options={{
+            //tabBarStyle: {display: 'none'},
+            tabBarLabel: 'Tài khoản',
+            tabBarIcon: () => <User size={20} />,
+          }}
+        />
+      </Tab.Navigator>
+    );
+}
 const Init = () => {
-    const Stack = createStackNavigator();
+  
     //screenOptions={{ headerShown: false }} 
     return (
         <NavigationContainer>
-            <Stack.Navigator >
-                <Stack.Screen name="display" component={display} />
-                <Stack.Screen name="settingacc" component={settingacc} />
-                <Stack.Screen name="information" component={information} />
-                <Stack.Screen name="phone" component={phone} />
-                <Stack.Screen name="otpinput" component={otpinput} />
-                <Stack.Screen name="notifications" component={notifications} />
-                <Stack.Screen name="email" component={email} />
-                <Stack.Screen name="sendemail" component={sendemail} />
-                
-            </Stack.Navigator>
+           <MyTab>
+
+           </MyTab>
         </NavigationContainer>
     )
 }

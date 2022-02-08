@@ -7,12 +7,14 @@ import sigin from '../srcloginn/sigin';
 import password from '../srcloginn/password';
 import forgetpassword from '../srcloginn/forgetpassword';
 import forget from '../srcloginn/forget';
+import display from '../srcuser/display';
 const Init = () => {
     const Stack = createStackNavigator();
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }} >
                 <Stack.Screen name="login" component={login} />
+                <Stack.Screen name="display" component={display} />
                 <Stack.Screen name="sigin" component={sigin} />
                 <Stack.Screen name="password" component={password} />
                 <Stack.Screen name="forgetpassword" component={forgetpassword} />

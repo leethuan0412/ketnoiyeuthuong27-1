@@ -5,11 +5,12 @@ import Smile from '../../contanst/smile.svg';
 import Cry from '../../contanst/cry.svg';
 import Tich from '../../contanst/tich.svg';
 import styles from "../../stylelogin/stylefollow";
-const password = () => {
+const password = (props) => {
   //const { navigation } = props;
   const [text, onChangeText] = React.useState(null);
   const [number, onChangeNumber] = React.useState(null);
   const [value, setVlue] = React.useState('');
+  const { navigation } = props;
   return (
     <SafeAreaView >
       <View style={{alignSelf:'center'}}> 
