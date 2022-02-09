@@ -28,7 +28,7 @@ const settingacc = (props) => {
                 </TouchableOpacity>
             </View>
             <View style={styles.setting}>
-                <TouchableOpacity onPress={()=>{navigation.navigate('login')}}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Mystack2')}}>
                     <Text style={{ fontSize: 14, color: '#FF0000',marginTop:21  }}>Đăng xuất</Text>
                 </TouchableOpacity>
             </View>

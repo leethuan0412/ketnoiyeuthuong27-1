@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import display from '../srcuser/display';
 import settingacc from '../srcuser/settingacc';
 import information from '../srcuser/information';
@@ -13,11 +14,6 @@ import sendemail from'../srcuser/sendemail';
 import vote from '../follow/vote';
 import login from '../srcloginn/login';
 import sigin from '../srcloginn/sigin';
-import Home from '../../contanst/home.svg';
-import Message from '../../contanst/message.svg';
-import Popular from '../../contanst/heart.svg';
-import User from '../../contanst/user.svg';
-import List from '../../contanst/list.svg';
 import password from '../srcloginn/password';
 import forgetpassword from '../srcloginn/forgetpassword';
 import forget from '../srcloginn/forget';
@@ -45,8 +41,7 @@ function Mystack() {
         <Stack.Screen name="email" component={email} />
         <Stack.Screen name="sendemail" component={sendemail} />
         <Stack.Screen name="vote" component={vote} />
-        <Stack.Screen name="Mystack2" component={Mystack2} />
-
+        <Stack.Screen name="Mystack2" component={Mystack2}/>
     </Stack.Navigator>
     );
 }
@@ -56,15 +51,15 @@ function MyTab() {
         <Tab.Navigator
         screenOptions={{headerShown: false, tabBarActiveTintColor: 'green'}}>
         <Tab.Screen
-          name="Mystack"
+          name="Trang chủ"
           component={Mystack}
           options={{
             //tabBarStyle: { display: "none" },
             tabBarLabel: 'Trang chủ',
-            tabBarIcon: () => <Home size={20} />,
-            //     tabBarIcon: () => (
-            //         <MaterialCommunityIcons name="account" color={'red'} size={20} />
-            //       ),
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="home" size={size} color={color} />
+            ),
+                  
           }}
         />
         <Tab.Screen
@@ -73,7 +68,9 @@ function MyTab() {
           options={{
             //tabBarStyle: { display: "none" },
             tabBarLabel: 'Tin nhắn',
-            tabBarIcon: () => <Message size={20} />,
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="message" color={color} size={24} />
+            ),
           }}
         />
 
@@ -83,7 +80,9 @@ function MyTab() {
           options={{
             //tabBarStyle: {display: 'none'},
             tabBarLabel: 'Cộng đồng',
-            tabBarIcon: () => <Popular size={20} />,
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="format-list-checkbox" color={color} size={24} />
+            ),
           }}
         />
         <Tab.Screen
@@ -92,7 +91,9 @@ function MyTab() {
           options={{
             //tabBarStyle: {display: 'none'},
             tabBarLabel: 'Cộng đồng',
-            tabBarIcon: () => <List size={20} />,
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="hand" color={color} size={24} />
+            ),
           }}
         />
         <Tab.Screen
@@ -101,7 +102,9 @@ function MyTab() {
           options={{
             //tabBarStyle: {display: 'none'},
             tabBarLabel: 'Tài khoản',
-            tabBarIcon: () => <User size={20} />,
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons name="account" color={color} size={24} />
+            ),
           }}
         />
       </Tab.Navigator>
