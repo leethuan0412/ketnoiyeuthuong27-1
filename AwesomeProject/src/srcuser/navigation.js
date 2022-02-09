@@ -69,7 +69,7 @@ function MyTab() {
             //tabBarStyle: { display: "none" },
             tabBarLabel: 'Tin nhắn',
             tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name="message" color={color} size={24} />
+              <MaterialCommunityIcons name="facebook-messenger" color={color} size={24} />
             ),
           }}
         />
@@ -81,7 +81,7 @@ function MyTab() {
             //tabBarStyle: {display: 'none'},
             tabBarLabel: 'Cộng đồng',
             tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name="format-list-checkbox" color={color} size={24} />
+              <MaterialCommunityIcons name="hand-heart" color={color} size={24} />
             ),
           }}
         />
@@ -90,9 +90,9 @@ function MyTab() {
           component={phone}
           options={{
             //tabBarStyle: {display: 'none'},
-            tabBarLabel: 'Cộng đồng',
+            tabBarLabel: 'Quản lý ',
             tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name="hand" color={color} size={24} />
+              <MaterialCommunityIcons name="format-list-checkbox" color={color} size={24} />
             ),
           }}
         />
