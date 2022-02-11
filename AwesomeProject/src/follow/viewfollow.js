@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { View, useWindowDimensions } from 'react-native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+import Sub from '../../contanst/sub.svg';
 
 import { SafeAreaView, StyleSheet, TextInput, Text, ImageBackground, Image, TouchableOpacity, } from "react-native";
 import Component from "./component";
@@ -19,7 +20,7 @@ const SecondRoute = () => {
         <SafeAreaView>
             <View style={{ marginTop: 45, }}>
                 <TouchableOpacity>
-                    <Image source={{ uri: "https://s3-alpha-sig.figma.com/img/bdad/a153/bc98314cbda2b49b217ed38dbe1d62f8?Expires=1645401600&Signature=B590wyyvShgqfLgzhpbjrAxBuuqRybUDaUKBWGzA1B2op-59CUv52SpAIzv7B083Ncfj~ZwEe3WlPEytPTQAwQurKHHWSFv5KamISNB7mDylH6DLZovXjEYevWpuoeiLt9JVn1DG0H2umESI3q7-e4fr9V9~3uy~JU8mnhoEdwQbpEaWf5JIzSa2Tcwvui-1hjbU1dAePUgH7Fyy6jabLnXBROPZoFbSFdFaI2ww~X7oGuvyhqNMtGHmQv6q-6lO63GlTo9FKZ3u51ceyOeM3KFuiR2~BjVUy6TrOas0SywVFvzVZFXUGZbPpQKgc9oqyNLtjAYGlg6pVET-4ZnAnQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" }} style={{ height: 220, width: 329, alignSelf: 'center', }} />
+                    <Sub style={{ height: 220, width: 329, alignSelf: 'center', }} />
                 </TouchableOpacity>
                 <Text style={{ alignSelf: 'center', fontWeight: 'bold', fontSize: 20, marginTop: 20, }}>Bạn chưa theo dõi ai</Text>
             </View>

@@ -17,15 +17,18 @@ import sigin from '../srcloginn/sigin';
 import password from '../srcloginn/password';
 import forgetpassword from '../srcloginn/forgetpassword';
 import forget from '../srcloginn/forget';
+import TabViewExample from '../follow/viewfollow';
+// import vote from '../follow/vote';
 const Stack = createStackNavigator();
 function Mystack2(){
     return(
-        <Stack.Navigator screenOptions={{  }} >
+        <Stack.Navigator screenOptions={{ headerShown: false }} >
         <Stack.Screen name="login" component={login} />
         <Stack.Screen name="sigin" component={sigin} />
         <Stack.Screen name="password" component={password} />
         <Stack.Screen name="forgetpassword" component={forgetpassword} />
         <Stack.Screen name="forget" component={forget} />
+        
     </Stack.Navigator>
     );
 }
@@ -49,24 +52,25 @@ const Tab = createBottomTabNavigator();
 function MyTab() {
     return(
         <Tab.Navigator
-        screenOptions={{headerShown: false, tabBarActiveTintColor: 'green'}}>
+        screenOptions={{headerShown: false, tabBarActiveTintColor: 'black',tabBarHideOnKeyboard: true,}}
+        >
         <Tab.Screen
           name="Trang chủ"
           component={Mystack}
           options={{
             //tabBarStyle: { display: "none" },
             tabBarLabel: 'Trang chủ',
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="home" size={size} color={color} />
+            tabBarIcon: ({ color}) => (
+              <MaterialCommunityIcons name="home" size={24} color={color} />
             ),
                   
           }}
         />
         <Tab.Screen
-          name="login"
-          component={login}
+          name="TabViewExample"
+          component={TabViewExample}
           options={{
-            //tabBarStyle: { display: "none" },
+           // tabBarStyle: { display: "none" },
             tabBarLabel: 'Tin nhắn',
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="facebook-messenger" color={color} size={24} />
@@ -75,10 +79,10 @@ function MyTab() {
         />
 
         <Tab.Screen
-          name="sigin"
-          component={sigin}
+          name="email"
+          component={email}
           options={{
-            //tabBarStyle: {display: 'none'},
+            tabBarStyle: {display: 'none'},
             tabBarLabel: 'Cộng đồng',
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="hand-heart" color={color} size={24} />
@@ -86,10 +90,10 @@ function MyTab() {
           }}
         />
         <Tab.Screen
-          name="Quản lí"
-          component={phone}
+          name="sendemail"
+          component={sendemail}
           options={{
-            //tabBarStyle: {display: 'none'},
+            tabBarStyle: {display: 'none'},
             tabBarLabel: 'Quản lý ',
             tabBarIcon: ({ color }) => (
               <MaterialCommunityIcons name="format-list-checkbox" color={color} size={24} />
@@ -97,8 +101,8 @@ function MyTab() {
           }}
         />
         <Tab.Screen
-          name="email"
-          component={email}
+          name="settingacc"
+          component={settingacc}
           options={{
             //tabBarStyle: {display: 'none'},
             tabBarLabel: 'Tài khoản',

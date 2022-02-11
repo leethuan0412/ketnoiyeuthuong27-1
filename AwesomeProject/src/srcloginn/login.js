@@ -9,6 +9,7 @@ import Eye from '../../contanst/eye.svg';
 import Eyehint from '../../contanst/eyehint.svg';
 import Facebook from '../../contanst/facebook.svg';
 import Logo from '../../contanst/logo.svg';
+import Google from '../../contanst/gg.svg';
 const login = () => {
   const navigation = useNavigation();
   const [text, onChangeText] = React.useState(null);
@@ -64,12 +65,9 @@ const login = () => {
       <Text style={styles.Text}>-Hoặc đăng nhập với-</Text>
       <View style={{ flexDirection: 'row', marginTop: 18, alignSelf: 'center' }}>
         <TouchableOpacity>
-          <Image
-            style={styles.google}
-            source={{
-              uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png',
-            }}
-          />
+           
+            <Google  style={styles.google}/>
+          
         </TouchableOpacity>
         <TouchableOpacity>
         <Facebook   height= {36}  width= {36} marginLeft={15} bottom= {'16.41%'} />

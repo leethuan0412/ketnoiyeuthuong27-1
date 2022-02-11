@@ -73,5 +73,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#DFDCDC',
   },
   tichxanh: {widt: 24, height: 24, position: 'absolute', top: 70, left: 70},
+  login: {
+    backgroundColor: '#60B939',
+        //color: 'white',
+        height: 50,
+        borderRadius: 10,
+        marginTop: 32,
+        marginLeft: 16,
+        marginRight: 16,
+        fontSize: 14,
+        width: 328,
+        alignItems: 'center',
+        justifyContent: 'center',
+        alignSelf: 'center',
+  },
 });
 export default styles;

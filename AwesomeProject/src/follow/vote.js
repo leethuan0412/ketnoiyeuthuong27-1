@@ -5,12 +5,12 @@ import Smile from '../../contanst/smile.svg';
 import Cry from '../../contanst/cry.svg';
 import Tich from '../../contanst/tich.svg';
 import styles from "../../stylelogin/stylefollow";
-const password = (props) => {
-  //const { navigation } = props;
+import { useNavigation } from '@react-navigation/native';
+const vote = () => {
   const [text, onChangeText] = React.useState(null);
   const [number, onChangeNumber] = React.useState(null);
   const [value, setVlue] = React.useState('');
-  const { navigation } = props;
+  const navigation = useNavigation();
   return (
     <SafeAreaView >
       <View style={{alignSelf:'center'}}> 
@@ -55,8 +55,9 @@ const password = (props) => {
         value={text}
         placeholder="Nhập nội dung bạn muốn nhận xét..."
       />
-    
-     
+    <TouchableOpacity style={styles.login} onPress={()=>{navigation.navigate('display')}}>
+        <Text style={{color:'white'}}>Xác nhận</Text>
+      </TouchableOpacity>
       
     </SafeAreaView>
 
@@ -94,4 +95,4 @@ const password = (props) => {
 //   tichxanh: {widt:24,height:24,position:'absolute',top:70,left:70}
 // });
 
-export default password;
+export default vote;

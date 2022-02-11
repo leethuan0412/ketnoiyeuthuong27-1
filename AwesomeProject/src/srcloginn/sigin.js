@@ -3,6 +3,7 @@ import { SafeAreaView, StyleSheet, TextInput, Text, ImageBackground, Image, Touc
 import styles from '../../stylelogin/styleLogin';
 import Facebook from '../../contanst/facebook.svg';
 import Logo from '../../contanst/logo.svg';
+import Google from '../../contanst/gg.svg';
 const sigin = (props) => {
   const { navigation } = props;
   const [text1, onChangeText1] = React.useState(null);
@@ -51,12 +52,7 @@ const sigin = (props) => {
       <Text style={styles.Text1}>-Hoặc đăng nhập với-</Text>
       <View style={{ flexDirection: 'row', marginTop: 18, alignSelf: 'center' }}>
         <TouchableOpacity>
-          <Image
-            style={styles.google1}
-            source={{
-              uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png',
-            }}
-          />
+        <Google  style={styles.google}/>
         </TouchableOpacity>
         <TouchableOpacity>
         <Facebook   height= {36}  width= {36} marginLeft={15}  />
