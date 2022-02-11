@@ -52,7 +52,7 @@ const sigin = (props) => {
       <Text style={styles.Text1}>-Hoặc đăng nhập với-</Text>
       <View style={{ flexDirection: 'row', marginTop: 18, alignSelf: 'center' }}>
         <TouchableOpacity>
-        <Google  style={styles.google}/>
+        <Google  height= {36}  width= {36} />
         </TouchableOpacity>
         <TouchableOpacity>
         <Facebook   height= {36}  width= {36} marginLeft={15}  />

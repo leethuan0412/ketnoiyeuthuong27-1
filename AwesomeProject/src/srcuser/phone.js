@@ -29,6 +29,7 @@ const phone = (props) => {
           onChangeText={onChangeText1}
           value={text1}
           placeholder="Nhập số điện thoại"
+          keyboardType="numeric"
         />
 
       </View>

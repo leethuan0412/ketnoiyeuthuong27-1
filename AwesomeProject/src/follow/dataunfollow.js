@@ -2,7 +2,7 @@
 
 const data = [
     {
-      id: '0',
+      id: '5',
       name: 'Lê Đức Thuận',
       image: "https://i.pinimg.com/564x/bb/8b/97/bb8b976467f63fc083bcc18f2c47b760.jpg",
       isFollow: false,
@@ -26,7 +26,7 @@ const data = [
       isFollow: false,
     },
     {
-      id: '3',
+      id: '4',
       name: 'Đức Lê Thuận',
       image: "https://i.pinimg.com/236x/bd/af/bf/bdafbf81a88e8872b457dd2779840931.jpg",
       isFollow: false,
