@@ -71,10 +71,10 @@ function MyTab() {
         component={follow}
         options={{
           // tabBarStyle: { display: "none" },
-          tabBarLabel: 'Tin nhắn',
+          tabBarLabel: 'Follow',
           tabBarIcon: ({color}) => (
             <MaterialCommunityIcons
-              name="facebook-messenger"
+              name="account"
               color={color}
               size={24}
             />
